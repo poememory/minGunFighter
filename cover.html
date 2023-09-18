@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MinGunFight</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("./images/background.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+
+    .text {
+      font-size: 100px;
+      font-family: 'CustomFont', sans-serif;
+      font-weight: bold;
+      color: #FFD700;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .start {
+     font-size: 60px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 250px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    /* ����Ч�� */
+    .text:before,
+    .text:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.8;
+    }
+
+    /* ����Ч�� - ��һ�� */
+    .text:before {
+      color: #FF9800;
+      filter: blur(10px);
+    }
+
+    /* ����Ч�� - �ڶ��� */
+    .text:after {
+      color: #F44336;
+      filter: blur(20px);
+    }
+
+    /* ���涯�� */
+    @keyframes flame {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-20px) scale(1.1);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Ӧ�ö��� */
+    .text:before,
+    .text:after {
+      animation: flame 2s infinite;
+    }
+    
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text" data-text="GUNFIGHT">GUN FIGHT</h1>
+  </div>
+  <div class="start" onclick=jump()>Start</div>
+  <script>
+    function jump(){
+      window.location.replace("index.html")
+    }
+  </script>
+</body>
+</html>
